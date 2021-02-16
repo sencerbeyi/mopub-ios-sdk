@@ -1,7 +1,7 @@
 //
 //  MPFullscreenAdAdapter+Reward.m
 //
-//  Copyright 2018-2020 Twitter, Inc.
+//  Copyright 2018-2021 Twitter, Inc.
 //  Licensed under the MoPub SDK License Agreement
 //  http://www.mopub.com/legal/sdk-license-agreement/
 //
@@ -11,7 +11,7 @@
 #import "MPFullscreenAdAdapter+Private.h"
 #import "MPFullscreenAdAdapter+Reward.h"
 #import "MPLogging.h"
-#import "MPRewardedVideo+Internal.h"
+#import "MPRewardedAds+Internal.h"
 
 @implementation MPFullscreenAdAdapter (Reward)
 
@@ -36,12 +36,8 @@
     // the rewarded is not defined in the ad response / ad configuration, but is defined after
     // the reward condition has been satisfied (for 3rd party ad SDK's).
 
-    if (NO == isForRewardCountdownComplete &&
-        NO == (isForUserInteract && self.configuration.rewardedPlayableShouldRewardOnClick)) {
-        /*
-         Disallow trying to provide the reward when the reward countdown is not complete
-         and it's triggered by user interaction but the "x-should-reward-on-click" flag is off.
-         */
+    if (!isForRewardCountdownComplete) {
+        // Do not reward the user until the reward countdown is complete.
         return;
     }
 
@@ -54,7 +50,7 @@
     // The original URLs come from the value of "x-rewarded-video-completion-url" in ad response.
     NSArray<NSURL *> * urls = self.rewardedVideoCompletionUrlsByAppendingClientParams;
     for (NSURL * url in urls) {
-        [[MPRewardedVideo sharedInstance] startRewardedVideoConnectionWithUrl:url];
+        [[MPRewardedAds sharedInstance] startRewardedAdConnectionWithUrl:url];
     }
 
     // Client side reward handling:
