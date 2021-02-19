@@ -104,7 +104,7 @@ For GDPR-specific upgrading instructions, also see the [GDPR Integration Guide](
 ## Requirements
 
 - iOS 10.0 and up
-- Xcode 12.0 and up
+- Xcode 12.1 and up
 - Swift 5
 
 ## License
