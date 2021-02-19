@@ -1,3 +1,7 @@
+## Version 5.16.1 (February 19, 2021)
+- **Bug Fixes**
+  - Fixed bug where users were not receiving rewards from Rewarded network ads using network adapters.
+
 ## Version 5.16.0 (February 16, 2021)
 - **Features**
   - Rewarded ads feature and API improvements.

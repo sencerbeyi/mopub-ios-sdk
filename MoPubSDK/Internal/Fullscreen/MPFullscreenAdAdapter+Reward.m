@@ -27,8 +27,11 @@
 - (void)provideRewardToUser:(MPReward *)reward
  forRewardCountdownComplete:(BOOL)isForRewardCountdownComplete
             forUserInteract:(BOOL)isForUserInteract {
-    // Only provide a reward to the user if the ad is Rewarded.
-    if (!self.configuration.isRewarded) {
+    // Only provide a reward to the user if a reward is expected so non-rewarded ads don't receive reward callbacks.
+    // Note: checking the adapter instance's own @c isRewardExpected getter allows us to use information
+    // provided by the network's adapter, whereas using @c MPAdConfiguration's @c isRewarded only uses
+    // information from our ad server.
+    if (!self.isRewardExpected) {
         return;
     }
 
