@@ -92,7 +92,7 @@ static const NSTimeInterval kAnimationTimeInterval = 0.5;
         [NSLayoutConstraint activateConstraints:@[
             [contentView.mp_safeTopAnchor constraintEqualToAnchor:self.mp_safeTopAnchor],
             [contentView.mp_safeLeadingAnchor constraintEqualToAnchor:self.mp_safeLeadingAnchor],
-            [contentView.mp_safeBottomAnchor constraintEqualToAnchor:self.mp_safeBottomAnchor],
+            [contentView.mp_safeBottomAnchor constraintEqualToAnchor:self.mp_bottomAnchor],
             [contentView.mp_safeTrailingAnchor constraintEqualToAnchor:self.mp_safeTrailingAnchor]
         ]];
     }
