@@ -15,6 +15,7 @@ Pod::Spec.new do |spec|
                           DESC
   spec.social_media_url = 'http://twitter.com/mopub'
   spec.source           = { :git => 'https://github.com/sencerbeyi/mopub-ios-sdk-lastgear.git', :tag => '5.16.1' }
+
   spec.requires_arc     = true
   spec.ios.deployment_target = '10.0'
   spec.swift_version    = '5.0'
