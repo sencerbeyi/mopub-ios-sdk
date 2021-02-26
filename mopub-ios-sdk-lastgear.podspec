@@ -1,7 +1,7 @@
 Pod::Spec.new do |spec|
   spec.name             = 'mopub-ios-sdk-lastgear'
   spec.module_name      = 'MoPubSDK'
-  spec.version          = '5.16.1.1'
+  spec.version          = "5.16.1.1"
   spec.license          = { :type => 'New BSD', :file => 'LICENSE' }
   spec.homepage         = 'https://github.com/sencerbeyi/mopub-ios-sdk-lastgear'
   spec.authors          = { 'MoPub' => 'support@mopub.com' }
