@@ -70,7 +70,7 @@ echo
 # ===================================================================
 
 # extract pod version
-pod_ver=$(sed -n 's/s.version.*"\(.*\)"/\1/p' *.podspec | xargs)
+pod_ver=$(sed -n 's/spec.version.*"\(.*\)"/\1/p' *.podspec | xargs)
 
 #
 echo -e "${prp}# git tag with new version: ${ylw} ${pod_ver} \n" "${nc}"
